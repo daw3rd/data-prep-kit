@@ -39,3 +39,25 @@ run-s3-ray-sample: .transforms.run-s3-ray-sample
 minio-start:	.minio-start
 
 load-image:: .transforms.load-image
+
+update-toml:: 
+	@# Help: Copy the Makefile distribution version into the pyproject.toml
+	sed -e 's/^version[ ]*=.*/version = "'${DPK_LIB_VERSION}'"/' pyproject.toml > tt.toml
+	mv tt.toml pyproject.toml       
+	
+setup:: 
+	
+build-wheel:: update-toml 
+	@# Help: Build the distribution for publishing to a pypi
+	rm -r dist || true
+	rm -rf src/*egg-info || true 
+	${PIP} install --upgrade build 
+	${PYTHON} -m build
+	
+publish-wheel:: build test-src 
+	@# Help: Publish project to pypi 
+	${PYTHON} -m twine check dist/*
+	${PYTHON} -m twine upload --verbose --non-interactive dist/*
+	#@echo "create a git tag to reference published version"
+	#@git tag ${TAG}
+	#@git push origin ${TAG}
