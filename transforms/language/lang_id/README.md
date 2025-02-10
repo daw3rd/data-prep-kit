@@ -56,6 +56,19 @@ Please see the set of
 for details on general project conventions, transform configuration,
 testing and IDE set up.
 
+# Supported Languages
+| Supported Languages |                     |                     |                     |                     |                     |                     |                     |
+| :-----------------: | :-----------------: | :-----------------: | :-----------------: | :-----------------: | :-----------------: | :-----------------: | :-----------------: |
+| Afrikaans           | Avaric              | Bihari languages    | Chavacano           |                     |                     |                     |                     |
+| Alemannic           | Azerbaijani         | Bengali             | Chechen             |                     |                     |                     |                     |
+| Amharic             | South Azerbaijani   | Tibetan             | Cebuano             |                     |                     |                     |                     |
+| Aragonese           | Bashkir             | Bishnupriya Manipuri| Central Kurdish     |                     |                     |                     |                     |
+| Arabic              | Bavarian            | Breton              | Corsican            |                     |                     |                     |                     |
+| Egyptian Arabic     | Central Bikol       | Bosnian             | Czech               |                     |                     |                     |                     |
+| Assamese            | Belarusian          | Buriat              | Chuvash             |                     |                     |                     |                     |
+| Asturian            | Bulgarian           | Catalan             | Welsh               |                     |                     |                     |                     |
+
+
 ## Summary 
 This project wraps the language identification transform with a Ray runtime.
 
